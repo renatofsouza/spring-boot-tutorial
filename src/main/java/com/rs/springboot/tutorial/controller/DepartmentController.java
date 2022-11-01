@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class DepartmentController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department){
         return departmentService.saveDepartment(department);
     }
 
