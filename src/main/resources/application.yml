@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: dcbappUser
+    url: jdbc:mysql://localhost:3306/dcbapp
+    driverClassName: com.mysql.jdbc.Driver
+    password: CasaDaMaeJoana@01
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: 'Hello World!!'
+server:
+  port: '8082'
