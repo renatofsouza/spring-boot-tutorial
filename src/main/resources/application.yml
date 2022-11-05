@@ -33,6 +33,12 @@ spring:
     show-sql: 'true'
 welcome:
   message: 'Hello World!!'
+management:
+    endpoints:
+      web:
+          exposure:
+            include: "*"
+            exclude: "env,beans"
 
 ---
 spring:
