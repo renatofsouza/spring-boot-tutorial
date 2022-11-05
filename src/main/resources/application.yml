@@ -1,4 +1,42 @@
+server:
+  port: '8082'
 spring:
+  profiles:
+    active: qa
+---
+
+spring:
+  profiles: dev
+  datasource:
+    username: dcbappUser
+    url: jdbc:mysql://localhost:3306/dcbapp_dev
+    driverClassName: com.mysql.jdbc.Driver
+    password: CasaDaMaeJoana@01
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: 'Hello World!!'
+
+---
+spring:
+  profiles: qa
+  datasource:
+    username: dcbappUser
+    url: jdbc:mysql://localhost:3306/dcbapp_qa
+    driverClassName: com.mysql.jdbc.Driver
+    password: CasaDaMaeJoana@01
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: 'Hello World!!'
+
+---
+spring:
+  profiles: prod
   datasource:
     username: dcbappUser
     url: jdbc:mysql://localhost:3306/dcbapp
@@ -10,5 +48,3 @@ spring:
     show-sql: 'true'
 welcome:
   message: 'Hello World!!'
-server:
-  port: '8082'
